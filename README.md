@@ -14,18 +14,28 @@ This is a simple User Management System . It allows users to register, log in, a
 - **Backend**: PHP (using PDO for database security).
 - **Database**: MySQL
 
-## How to Run Locally
-I used **XAMPP** to run this project on Windows.
+## Project Flow
+This section describes how the application works and the logic behind each step:
 
-1. **Install XAMPP**: Download and install it from Apache Friends.
-2. **Start Services**: Open XAMPP Control Panel and start **Apache** and **MySQL**.
-   - *Note: I changed my Apache port to **8080** to avoid conflicts.*
-3. **Setup Database**:
-   - Go to `http://localhost:8080/phpmyadmin`.
-   - Create a new database named `user_management`.
-   - Run the SQL query provided in the `db_setup.sql` file (or create a `users` table manually).
-4. **Move Files**: Copy this project folder into `C:\xampp\htdocs\internship`.
-5. **Access the site**: Open `http://localhost:8080/internship/index.html` in your browser.
+### 1. User Registration
+- The journey starts at the registration page (`register.html`). 
+- When a user fills out the form, JavaScript validates the inputs (e.g., checking for a valid email format and password length).
+- The data is sent as a JSON object to `api/register.php`.
+- The backend checks if the email is already taken. If it's unique, the password is hashed and the user is saved into the MySQL database.
+
+### 2. Authentication (Login)
+- Users can log in through the main page (`index.html`).
+- The system verifies the email and password against the database records.
+- Once authenticated, a secure PHP session is started, and the user is redirected to the dashboard.
+
+### 3. Dashboard and Data Display
+- The dashboard (`dashboard.html`) is the central hub.
+- It automatically fetches the list of all registered users from `api/users.php`.
+- Access Control: Only logged-in users can view this page. If someone tries to access it without logging in, they are blocked.
+
+### 4. Search and Filtering
+- **Search**: As you type in the search bar, the table updates in real-time to show matching results. This is handled by JavaScript for a fast, "app-like" feel.
+- **Admin Filter**: A dedicated button allows you to quickly toggle between seeing everyone and seeing only the administrators.
 
 ## Database Structure
 The system uses a single table called `users`:
