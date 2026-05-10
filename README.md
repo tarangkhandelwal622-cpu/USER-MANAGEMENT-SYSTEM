@@ -37,17 +37,17 @@ The system uses a single table called `users`:
 - `created_at`: Automatically generated timestamp
 
 ## Folder Structure
-- `/api`: Contains all the PHP backend logic.
-    - `register.php`: Handles new user creation.
-    - `login.php`: Manages user authentication and sessions.
-    - `users.php`: Retrieves the list of users for the dashboard.
-- `/css`: Contains the styling (`style.css`).
-- `/js`: Contains the frontend logic.
-    - `register.js`: Validation and API calls for the registration page.
-    - `login.js`: Logic for the login page.
-    - `dashboard.js`: Manages the user table, search, and filters.
-- `db.php`: Central database connection configuration.
-- `index.html`: The main login page (entry point).
+- `/api`
+    - `register.php`
+    - `login.php`
+    - `users.php`
+- `/css`
+- `/js`
+    - `register.js`
+    - `login.js`
+    - `dashboard.js`
+- `db.php`
+- `index.html`
 
 ## Key Implementation Details
 - **Security**: Passwords are never stored as plain text. I used PHP's `password_hash()` with the default algorithm.
@@ -60,5 +60,3 @@ The system uses a single table called `users`:
 - Add a "Forgot Password" flow with email verification.
 - Add more granular permissions for the Admin role.
 
----
-*Created as part of my internship tasks.*
