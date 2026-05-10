@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="page">
+        <section class="form-card" aria-labelledby="register-title">
+            <div class="page-header">
+                <p class="kicker">User Management System</p>
+                <h1 id="register-title">Register user</h1>
+                <p class="subtext">Enter approved account details.</p>
+            </div>
+
+            <form id="registerForm" novalidate>
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
+                    <div class="error" id="nameError"></div>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                    <div class="error" id="emailError"></div>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" autocomplete="new-password" required>
+                    <div class="error" id="passwordError"></div>
+                </div>
+
+                <div class="field">
+                    <label for="role">Role</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select role</option>
+                        <option value="admin">admin</option>
+                        <option value="user">user</option>
+                    </select>
+                    <div class="error" id="roleError"></div>
+                </div>
+
+                <div class="message" id="formMessage"></div>
+
+                <div class="button-row">
+                    <button class="full-width" type="submit">Register</button>
+                </div>
+            </form>
+
+            <p class="secondary-link">Already registered? <a href="index.html">Login</a></p>
+        </section>
+    </main>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="dashboard-page">
+        <section class="dashboard-shell" aria-labelledby="dashboard-title">
+            <div class="page-header">
+                <p class="kicker">User Management System</p>
+                <h1 id="dashboard-title">Registered users</h1>
+                <p class="subtext">Current account records.</p>
+            </div>
+
+            <div class="toolbar">
+                <div class="message" id="dashboardMessage"></div>
+                <div class="search-wrap">
+                    <input type="text" id="searchInput" placeholder="Search by name or email..." aria-label="Search users">
+                </div>
+                <button type="button" id="filterAdminsButton">Show Only Admins</button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody"></tbody>
+                </table>
+                <div class="empty-state" id="emptyState">No users found.</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
